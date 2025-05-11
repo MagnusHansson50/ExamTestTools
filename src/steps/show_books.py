@@ -1,11 +1,6 @@
 from behave import given, when, then
 from src.pages.book_page import BooksPage
 
-@given('jag är i vyn Katalog')
-def step_open_books_page(context):
-    context.page = BooksPage(context.browser)
-    context.page.goto()
-
 @then('ska en lista med böcker visas')
 def step_books_list_visible(context):
     assert context.page.books_list_is_visible()

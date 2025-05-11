@@ -1,4 +1,6 @@
 Feature: Visa endast favoriter
+# US5. Se enbart mina böcker
+# Som användare vill jag kunna växla vy för att endast se mina böcker.
 
   Scenario: Användaren filtrerar på favoriter
     Given jag är i vyn Katalog

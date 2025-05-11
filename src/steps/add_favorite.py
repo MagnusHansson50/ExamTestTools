@@ -8,7 +8,8 @@ def step_mark_book_as_favorite(context, title):
 def step_book_is_favorite(context, title):
     assert context.page.is_favorite(title)
 
-@when('jag klickar två gånger på favoritknappen för "{title}"')
-def step_click_favorite_twice(context, title):
+@when('jag klickar tre gånger på favoritknappen för "{title}"')
+def step_click_favorite_three_times(context, title):
+    context.page.toggle_favorite_marker(title)
     context.page.toggle_favorite_marker(title)
     context.page.toggle_favorite_marker(title)

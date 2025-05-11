@@ -12,6 +12,10 @@ class BooksPage:
         self.page.goto("https://tap-ht24-testverktyg.github.io/exam-template/")
         self.page.get_by_test_id("add-book").click()
 
+    def goto_my_books_page(self):
+        self.page.goto("https://tap-ht24-testverktyg.github.io/exam-template/")
+        self.page.get_by_test_id("favorites").click()
+
     def books_list_is_visible(self):
         return self.page.locator(".book").first.is_visible()
 
@@ -112,3 +116,48 @@ class BooksPage:
 
             except Exception as e:
                 print(f"Kunde inte markera '{data_testid}': {e}")
+
+    def wait_for_page_load(self):
+        self.page.wait_for_selector("h1")
+
+    def is_title_visible(self, title):
+        return self.page.locator(f"h1:text-is('{title}')").is_visible()
+
+    def is_image_visible_with_alt(self, alt_text):
+        return self.page.locator(f"img[alt='{alt_text}']").is_visible()
+
+    def is_heading_2_displayed(self, heading):
+        return self.page.locator(f"h2:text-is('{heading}')").is_visible()
+
+    def is_text_displayed(self, text):
+        return self.page.locator(f"text='{text}'").is_visible()
+
+    def is_catalogue_button_visible(self):
+        return self.page.get_by_test_id("catalog").is_visible()
+
+    def is_add_book_button_visible(self):
+        return self.page.get_by_test_id("add-book").is_visible()
+
+    def is_my_books_button_visible(self):
+        return self.page.get_by_test_id("favorites").is_visible()
+
+    def is_catalogue_button_disabled(self):
+        return self.page.get_by_test_id("catalog").is_disabled()
+
+    def is_add_book_button_disabled(self):
+        return self.page.get_by_test_id("add-book").is_disabled()
+
+    def is_my_books_button_disabled(self):
+        return self.page.get_by_test_id("favorites").is_disabled()
+
+    def is_catalogue_button_clickable(self):
+        button = self.page.get_by_test_id("catalog")
+        return button.is_visible() and not button.is_disabled()
+
+    def is_add_book_button_clickable(self):
+        button = self.page.get_by_test_id("add-book")
+        return button.is_visible() and not button.is_disabled()
+
+    def is_my_books_button_clickable(self):
+        button = self.page.get_by_test_id("favorites")
+        return button.is_visible() and not button.is_disabled()

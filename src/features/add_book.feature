@@ -1,4 +1,6 @@
 Feature: Lägga till en ny bok
+# US3. Lägga till en ny bok
+# Som användare vill jag kunna lägga till en egen bok genom att fylla i titel och författare, så att jag kan lägga till böcker som inte finns i katalogen.
 
   Scenario: Användaren lägger till en egen bok
     Given jag är i vyn Lägg till en bok

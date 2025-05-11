@@ -1,4 +1,7 @@
 Feature: Visa tillgängliga böcker
+# US1. Visa tillgängliga böcker
+# Som användare vill jag kunna se en lista med alla tillgängliga böcker så att jag kan välja en att lägga till på mina böcker.
+
 
   Scenario: Användaren ser en lista med böcker
     Given jag är i vyn Katalog
